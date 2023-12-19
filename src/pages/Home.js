@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import StartupList from '../components/StartupList';
 import { getAllStartups } from '../services/api';
 import FilterStartups from '../components/FilterStartups';
+import SearchStartups from '../components/SearchStartups';
 
 
 function Home() {
@@ -20,7 +21,7 @@ function Home() {
             <div className='flex flex-row gap-11'>
                 <FilterStartups startupData={startupData}/>
                 <div className='flex-grow-1'>
-                    <div>search</div>
+                     <SearchStartups/>
                      <StartupList  startupData={startupData}/>
                 </div>
             </div>
