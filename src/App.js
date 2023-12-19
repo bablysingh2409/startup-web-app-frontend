@@ -4,7 +4,7 @@ import Home from './pages/Home';
 
 function App() {
   return (
-    <div >
+    <div className='h-screen-grid bg-gradient-to-r from-purple-500 to-pink-400'>
      <Home/>
     </div>
   );
