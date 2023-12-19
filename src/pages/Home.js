@@ -3,6 +3,7 @@ import StartupList from '../components/StartupList';
 import { getAllStartups } from '../services/api';
 import FilterStartups from '../components/FilterStartups';
 import SearchStartups from '../components/SearchStartups';
+import Navbar from '../components/Navbar';
 
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
     },[]);
     return (
         <div className=''>
-            <nav className='h-20 bg-slate-500'></nav>
+           <Navbar/>
             <div className='flex flex-row gap-11'>
                 <FilterStartups startupData={startupData}/>
                 <div className='flex-grow-1'>
