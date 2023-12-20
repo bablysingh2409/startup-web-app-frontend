@@ -18,7 +18,7 @@ function FilterStartups({ startupData,handleFilterData }) {
         setSelectedValue(selectedIndustry);
       }
     return (
-        <div className='flex-grow-0 border-r-2 border-red-500'>
+        <div className='flex-grow-0 border-r-2 border-gray-100'>
             <h1 className='font-semibold text-4xl text-center text-red-950 bg-red-300 p-3 border-1 rounded-lg m-4'>Filter</h1>
             <div className='flex flex-col items-center w-[240px] h-[240px] rounded-lg '>
                 <select className='bg-yellow-200 p-4 w-full flex items-center justify-between 

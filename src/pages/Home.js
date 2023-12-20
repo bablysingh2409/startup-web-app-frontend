@@ -4,19 +4,25 @@ import { getAllStartups, getStartupByIndustry,searchStartups } from '../services
 import FilterStartups from '../components/FilterStartups';
 import SearchStartups from '../components/SearchStartups';
 import Navbar from '../components/Navbar';
+import { Spinner } from 'flowbite-react';   
 
 
 function Home() {
     const [startupData, setStartupData] = useState([]);
     const [filterData,setFilterData]=useState([]);
+    const  [loading,setLoading]=useState(true);
 
+    //fetching all startup 
     const getStartup = async () => {
         try{
+            setLoading(true)
         const data = await getAllStartups();
         setStartupData(data);
         setFilterData(data)
         }catch(err){
             console.error('Error fetching all startups:', err);
+        }finally{
+            setLoading(false);
         }
 
     }
@@ -45,6 +51,10 @@ function Home() {
         }catch(err){
             console.error('Error handling search:', err);
         }
+    }  
+
+    if(loading){
+        return <Spinner aria-label="Left-aligned spinner example" size="xl" />
     }
 
     return (

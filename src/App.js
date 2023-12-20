@@ -1,6 +1,7 @@
 import Home from './pages/Home';
 import CreateStartup from './components/CreateStartup';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+import './App.css';
 
 function App() {
 
