@@ -11,7 +11,7 @@ function FilterStartups({ startupData,handleFilterData }) {
             }
         };
         fetchData();
-    },[selectedValue,handleFilterData])
+    },[selectedValue])
 
       const handleChange=async (e)=>{
         const selectedIndustry=e.target.value
@@ -24,11 +24,13 @@ function FilterStartups({ startupData,handleFilterData }) {
                 <select className='bg-yellow-200 p-4 w-full flex items-center justify-between 
                 font-bold text-lg rounded-lg tracking-wider border-4 border-transparent
                 ' value={selectedValue} onChange={handleChange} >
-                    {selectedValue === '' && <option value='' disabled>Select The Industry</option>}
+                   <option value='' disabled>
+                        Select The Industry
+                    </option>
                     {  
                         uniqueIndustries.map((industry,i) => {
                             return (<option className=' hover:bg-blue-300 cursor-pointer rounded-r-lg
-                          border-l-transparent' key={i}>
+                          border-l-transparent' key={i} value={industry}>
                                 {industry}
                             </option>
                             )
