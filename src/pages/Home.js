@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import StartupList from '../components/StartupList';
-import { getAllStartups, getStartupByIndustry } from '../services/api';
+import { getAllStartups, getStartupByIndustry,searchStartups } from '../services/api';
 import FilterStartups from '../components/FilterStartups';
 import SearchStartups from '../components/SearchStartups';
 import Navbar from '../components/Navbar';
@@ -25,6 +25,8 @@ function Home() {
         getStartup();
     }, []);
 
+
+    //filtering startup by industry name
     const handleFilterData = async (industry) => {
         try {
             const data = await getStartupByIndustry(industry);
@@ -35,13 +37,23 @@ function Home() {
         }
     }
 
+    //searching startup
+    const handleSearch=async (query)=>{
+        try{
+          const data=await searchStartups(query);
+          setFilterData(data);
+        }catch(err){
+            console.error('Error handling search:', err);
+        }
+    }
+
     return (
         <div className=''>
             <Navbar />
             <div className='flex flex-row gap-11'>
                 <FilterStartups startupData={startupData} handleFilterData={handleFilterData} />
                 <div className='flex-grow-1'>
-                    <SearchStartups />
+                    <SearchStartups handleSearch={handleSearch}/>
                     <StartupList startupData={filterData} />
                 </div>
             </div>
