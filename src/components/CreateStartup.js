@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import { createnewstartup } from '../services/api'
 
 function CreateStartup() {
@@ -10,7 +10,9 @@ function CreateStartup() {
     founders: '',
     industry: '',
     fundingAmount: ''
-  })
+  });
+  const navigate=useNavigate();
+
 
   const handleChange = (e) => {
     setFormData({
@@ -33,7 +35,8 @@ function CreateStartup() {
     founders: '',
     industry: '',
     fundingAmount: ''
-    })
+    });
+    navigate('/');
     
   }
   return (
