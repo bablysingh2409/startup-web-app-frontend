@@ -58,15 +58,18 @@ function Home() {
     }
 
     return (
-        <div className=''>
+        <div className='w-full'>
             <Navbar />
+            { Array.isArray(startupData) && Array.isArray(filterData) &&
             <div className='flex flex-row gap-11'>
-                <FilterStartups startupData={startupData} handleFilterData={handleFilterData} />
+             <FilterStartups startupData={startupData} handleFilterData={handleFilterData} />
                 <div className='flex-grow-1'>
                     <SearchStartups handleSearch={handleSearch}/>
-                    <StartupList startupData={filterData} />
+                   <StartupList startupData={filterData} />
                 </div>
             </div>
+            }
+            {!Array.isArray(startupData) && <p className='text-3xl text-red-900 font-bold'>Start the server</p>}
         </div>
     )
 }
