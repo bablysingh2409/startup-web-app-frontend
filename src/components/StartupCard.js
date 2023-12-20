@@ -3,7 +3,8 @@ import React from 'react'
 function StartupCard({data}) {
    
   return (
-    <div className='m-4 bg-gradient-to-r from-green-200 to-red-200 p-8 pt-2 shadow-lg border-s-violet-200 rounded-lg hover:scale-110 ease-in-out duration-500' >
+    <div className='m-4 bg-gradient-to-r from-green-200 to-red-200 p-8 pt-2 shadow-lg 
+    border-s-violet-200 rounded-lg hover:scale-110 ease-in-out duration-500 cursor-pointer'>
         <div className='flex flex-col flex-wrap w-52 gap-2'>
             <h1 className='text-center text-3xl text-blue-800 font-semibold'>{data.company_name}</h1>
              <p className='text-base text-yellow-600'><span className='text-lg font-medium mr-2 text-pink-800'>City:</span>{data.city}</p>

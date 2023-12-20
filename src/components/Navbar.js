@@ -9,7 +9,7 @@ function Navbar() {
              alt='logo'
              className='w-12 rounded-3xl ml-6 cursor-pointer'
              />
-             <p className='mr-6 cursor-pointer text-lg font-medium text-green-900 hover:text-white'>Create A New Startup </p>
+             <p className='mr-6 cursor-pointer text-lg font-medium text-green-900 hover:text-white'><Link to='/createnewstartup'>Create A New Startup </Link></p>
         </div>
     </nav>
   )
